@@ -11,16 +11,6 @@ const project = (() => {
       ios: {
         sourceDir: path.join('example', 'ios'),
       },
-      windows: {
-        sourceDir: 'windows',
-        solutionFile: 'ReactNativeDocumentPicker.sln',
-        projects: [
-          {
-            projectFile: 'ReactNativeDocumentPicker/ReactNativeDocumentPicker.vcxproj',
-            directDependency: true,
-          },
-        ],
-      },
     }
   } catch (e) {
     console.error('example config not found', e)
@@ -37,4 +27,19 @@ module.exports = {
     },
   },
   ...(project ? { project } : undefined),
+}
+
+module.exports.dependency = {
+  platforms: {
+    windows: {
+      sourceDir: 'windows',
+      solutionFile: 'ReactNativeDocumentPicker.sln',
+      projects: [
+        {
+          projectFile: 'ReactNativeDocumentPicker/ReactNativeDocumentPicker.vcxproj',
+          directDependency: true,
+        },
+      ],
+    },
+  },
 }
