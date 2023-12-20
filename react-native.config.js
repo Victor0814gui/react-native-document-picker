@@ -11,6 +11,16 @@ const project = (() => {
       ios: {
         sourceDir: path.join('example', 'ios'),
       },
+      windows: {
+        sourceDir: 'windows',
+        solutionFile: 'ReactNativeWebView.sln',
+        projects: [
+          {
+            projectFile: 'ReactNativeWebView/ReactNativeWebView.vcxproj',
+            directDependency: true,
+          },
+        ],
+      },
     }
   } catch (e) {
     console.error('example config not found', e)
