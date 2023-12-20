@@ -29,7 +29,7 @@ namespace RN = winrt::Microsoft::ReactNative;
 namespace winrt::ReactNativeDocumentPicker
 {
 
-REACT_MODULE(ReactNativeModule, L"ReactNativeDocumentPicker")
+REACT_MODULE(ReactNativeModule, L"RNDocumentPicker")
 struct ReactNativeModule
 {
     // See https://microsoft.github.io/react-native-windows/docs/native-modules for details on writing native modules
