@@ -13,10 +13,10 @@ const project = (() => {
       },
       windows: {
         sourceDir: 'windows',
-        solutionFile: 'ReactNativeWebView.sln',
+        solutionFile: 'ReactNativeDocumentPicker.sln',
         projects: [
           {
-            projectFile: 'ReactNativeWebView/ReactNativeWebView.vcxproj',
+            projectFile: 'ReactNativeDocumentPicker/ReactNativeDocumentPicker.vcxproj',
             directDependency: true,
           },
         ],

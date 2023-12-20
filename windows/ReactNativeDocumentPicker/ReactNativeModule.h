@@ -87,13 +87,12 @@ struct ReactNativeModule
                           auto message = std::wstring(winrt::hresult_error(asyncOp.ErrorCode()).message());
                           jsDispatcher.Post([promise, message] { promise.Reject(message.c_str()); });
                         }
-
                     });
 
                 });
           }
           catch (const hresult_error& ex) {
-            promise.Reject(RN::ReactError{ "Unable to make path or make_preferred for File " , winrt::to_string(ex.message()).c_str() });
+            promise.Reject(RN::ReactError{ winrt::to_string(ex.message()).c_str() });
            }
         }
 
@@ -160,13 +159,11 @@ struct ReactNativeModule
                   auto message = std::wstring(winrt::hresult_error(asyncOp.ErrorCode()).message());
                   jsDispatcher.Post([promise, message] { promise.Reject(message.c_str()); });
                 }
-
-                });
-
               });
+            });
           }
           catch (const hresult_error& ex) {
-            promise.Reject(RN::ReactError{ "Unable to make path or make_preferred for File " , winrt::to_string(ex.message()).c_str() });
+            promise.Reject(RN::ReactError{ winrt::to_string(ex.message()).c_str() });
           }
         }
 
@@ -198,19 +195,13 @@ struct ReactNativeModule
                   auto message = std::wstring(winrt::hresult_error(asyncOp.ErrorCode()).message());
                   jsDispatcher.Post([promise, message] { promise.Reject(message.c_str()); });
                 }
-
-                });
-
               });
+            });
           }
           catch (const hresult_error& ex) {
-            promise.Reject(RN::ReactError{ "Unable to make path or make_preferred for File " , winrt::to_string(ex.message()).c_str() });
+            promise.Reject(RN::ReactError{ winrt::to_string(ex.message()).c_str() });
           }
         }
-
-
-
-
 
     private:
         ReactContext m_reactContext{nullptr};       
